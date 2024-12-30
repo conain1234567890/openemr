@@ -105,7 +105,9 @@ switch ($search_any_type) {
                     </a>
                     <?php echo ($closeElement !== '') ? "</$closeElement>" : ''; ?>
                 <?php echo "</$wrapperElement>"; ?>
-
+                <button class="btn btn-sm btn-primary ml-2" data-bind="click: startConversation">
+                    <?php echo xlt("AI Assistant"); ?>
+                </button>
                 <div class="mt-2">
                     <span data-bind="text:patient().str_dob()"></span>
                 </div>
@@ -245,4 +247,27 @@ switch ($search_any_type) {
             <!-- /ko --><!-- user -->
         </div>
     </div>
+</script>
+<script>
+    function startConversation() {
+        // Get the element that contains the patient ID
+       
+        var patientIdElement = document.querySelector('[data-bind="text: pubpid"]');
+
+        // Get the Knockout.js data context for the element
+        var context = ko.contextFor(patientIdElement);
+
+        // Access the patient ID from the data context
+        var patientId = context.$data.pubpid();
+
+        // Store the patient ID in a variable
+        console.log("Patient ID:", patientId);
+        
+
+        // Construct the URL with the extracted first and last names
+        var url = 'http://localhost:5000/?patientId=' + encodeURIComponent(patientId);
+
+        // Open the URL in a new tab
+        window.open(url, '_blank');
+    }
 </script>

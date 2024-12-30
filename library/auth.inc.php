@@ -160,4 +160,18 @@ function authLoginScreen($timed_out = false)
     exit;
 }
 
+// Add the button beside the patient's name (title) in the patient profile (dashboard)
+function addStartConversationButton()
+{
+    ?>
+    <button onclick="startConversation()">Start Conversation</button>
+    <script>
+        function startConversation() {
+            // Implement the logic to start a conversation
+            alert('Starting conversation...');
+        }
+    </script>
+    <?php
+}
+
 ?>

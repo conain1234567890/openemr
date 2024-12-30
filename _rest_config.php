@@ -586,6 +586,15 @@ class RestConfig
         return true;
     }
 
+    /**
+     * Returns the base URL for the API
+     *
+     * @return string
+     */
+    public static function getApiBaseUrl(): string
+    {
+        return self::$ROOT_URL;
+    }
 
     /** prevents external cloning */
     private function __clone()

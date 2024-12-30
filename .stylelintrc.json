@@ -12,7 +12,7 @@
                 "ignore": ["attribute", "class", "id"]
             }
         ],
-        "string-quotes": null,
+        "string-quotes": "double",
         "selector-class-pattern": null,
         "selector-max-id": null,
         "selector-max-compound-selectors": null,
@@ -21,6 +21,9 @@
         "at-rule-empty-line-before": null,
         "scss/at-mixin-pattern": null,
         "max-nesting-depth": null,
-        "scss/at-extend-no-missing-placeholder": null
+        "scss/at-extend-no-missing-placeholder": null,
+        "indentation": 4,
+        "color-hex-case": "lower",
+        "max-line-length": 120
     }
 }
